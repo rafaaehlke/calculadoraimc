@@ -156,6 +156,21 @@ form button:hover{
   transform: scale(1.2);
 }
 
+/* Message Error */
+
+.alert-error {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  text-align: center;
+  font-weight: bold;
+  padding: .8rem 0;
+
+  background: var(--bg-error);
+  color: var(--txt-error);
+}
 /* Desktop */
 @media (max-width: 700px) {
   .container {
@@ -168,8 +183,42 @@ form button:hover{
   }
   
   .card {
-
     min-width: 100%;
     padding: 2.4rem;
   }
+
+  /* modal */
+  .modal-wrapper {
+    position: absolute;
+    inset: 0;
+    background: var(--bg-modal);
+  
+    display: grid;
+    place-content: center;
+
+    opacity: 0;
+    visibility: 0;
+  
+  }
+
+  .modal {
+    position: relative; /* faz com que o modal button, fique com a posição relativa e consiga definir estilizacao dentro da caixa button */
+  }
+  
+  .modal  button {
+    border: none;
+    background: none;
+    
+    position: absolute; /*absoluto ao elemento anterior a ele, (modal) */
+    top: .3rem;
+    right: .3rem;
+  
+    cursor: pointer;
+    transition: transform .3s;
+  }
+  
+  .modal button:hover {
+    transform: scale(1.2);
+  }
+  
 }
