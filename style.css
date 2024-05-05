@@ -16,6 +16,7 @@
   --btn-outline-color: #02799d;
 
   --bg-primary: #040924;
+  --bg-modal: rgba(0, 0, 0, 0.70);
   --bg-error: #f03e3e;
   --bg-input: #dce2e9;
   --bg-button-hover: #086480;
@@ -80,7 +81,7 @@ form input {
   padding: 1.6rem;
   border-radius: .4rem;
   border-radius: 4px;
-  border: 1px solid var(--Brand-Colors-Explorer-mid, #02799d);
+  border: 1px solid var(--btn-outline-color);
 }
 
 form input:focus{
@@ -95,7 +96,7 @@ form input::placeholder{
   margin-top: 1.6rem;
 } /* pega o input wrapper anterior a ele e aplicará a margin */
 
-button {
+form button {
   margin-top: 4.8rem;
   padding: 1.6rem;
   width: 100%;
@@ -117,8 +118,58 @@ button {
   transition: background .5s;
 }
 
-button:hover{
+form button:hover{
   background-color: var(--bg-button-hover);
 }
 
+/* Modal */
+
+.modal-wrapper {
+  position: absolute;
+  inset: 0;
+  background: var(--bg-modal);
+
+  display: grid;
+  place-content: center;
+
+  opacity: 0;
+  visibility: 0;
+}
+
+.modal {
+  position: relative; /* faz com que o modal button, fique com a posição relativa e consiga definir estilizacao dentro da caixa button */
+}
+
+.modal  button {
+  border: none;
+  background: none;
+  
+  position: absolute; /*absoluto ao elemento anterior a ele, (modal) */
+  top: 1.6rem;
+  right: 1.6rem;
+
+  cursor: pointer;
+  transition: transform .3s;
+}
+
+.modal button:hover {
+  transform: scale(1.2);
+}
+
 /* Desktop */
+@media (max-width: 700px) {
+  .container {
+    display: grid;
+    place-content: center;
+    min-width: 100vw;
+
+    overflow: hidden;
+
+  }
+  
+  .card {
+
+    min-width: 100%;
+    padding: 2.4rem;
+  }
+}
