@@ -197,7 +197,7 @@ form button:hover {
 
   .card {
     min-width: 100%;
-    padding: 2.4rem;
+    padding: 4.2rem;
   }
 
   /* modal */
@@ -222,8 +222,8 @@ form button:hover {
     background: none;
 
     position: absolute; /*absoluto ao elemento anterior a ele, (modal) */
-    top: 0.3rem;
-    right: 0.3rem;
+    top: .9rem;
+    right: .9rem;
 
     cursor: pointer;
     transition: transform 0.3s;
