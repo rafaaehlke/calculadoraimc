@@ -33,3 +33,6 @@ form.onsubmit = (event) => {
   Modal.open();
 };
 
+
+inputPeso.oninput = () => AlertError.close()
+inputAltura.oninput = () => AlertError.close()
